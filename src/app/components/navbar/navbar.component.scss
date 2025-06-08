@@ -1,12 +1,11 @@
 .main-navbar {
-  background-color: #ffffff;
+  background-color: #198754; // Green background in light mode
   padding: 0.75rem 0;
-  
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
 
   .navbar-brand {
     font-size: 1.5rem;
-    color: #198754;
+    color: #fff;
     transition: color 0.3s ease;
   }
 
@@ -14,33 +13,35 @@
     padding: 6px 16px;
     font-weight: 500;
     border-radius: 30px;
-    color: #198754 !important;
-    transition: all 0.2s ease;
+    color: #fff !important;
     background-color: transparent;
     border: 1px solid transparent;
+    transition: all 0.2s ease;
 
     &:hover {
-      background-color: rgba(25, 135, 84, 0.1);
-      border-color: #19875433;
+      background-color: rgba(255, 255, 255, 0.15);
+      border-color: rgba(255, 255, 255, 0.2);
     }
 
     &.active {
-      background-color: #198754;
-      color: #fff !important;
+      background-color: #fff;
+      color: #198754 !important;
     }
   }
 
   .toggle-btn {
     background-color: transparent;
-    border: 1px solid #19875433;
+    border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 50%;
     font-size: 1.2rem;
     padding: 5px 10px;
-    color: #198754;
+    color: #fff;
     transition: all 0.3s ease;
 
     &:hover {
-      background-color: rgba(25, 135, 84, 0.15);
+      background-color: rgba(255, 255, 255, 0.15);
     }
   }
 }
+
+
