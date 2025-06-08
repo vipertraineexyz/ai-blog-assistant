@@ -1,0 +1,36 @@
+.blog-list {
+  transition: background-color 0.3s ease, color 0.3s ease;
+
+  .card {
+    transition: box-shadow 0.3s ease, background-color 0.3s ease;
+
+    &:hover {
+      box-shadow: 0 0.5rem 1rem rgba(0, 128, 0, 0.1);
+    }
+  }
+}
+
+body.dark-mode {
+  .blog-list {
+    background-color: #121212;
+
+    .card {
+      background-color: #1e1e1e;
+      color: #f1f1f1;
+
+      .card-text {
+        color: #ccc;
+      }
+
+      .btn-outline-success {
+        color: #90ee90;
+        border-color: #90ee90;
+
+        &:hover {
+          background-color: #90ee90;
+          color: #121212;
+        }
+      }
+    }
+  }
+}
