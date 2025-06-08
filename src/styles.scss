@@ -64,3 +64,52 @@ body:not(.dark-mode) {
     border: 1px solid #ccc !important;
   }
 }
+
+/* Dark mode overrides */
+body.dark-mode {
+  textarea,
+  input[type="text"],
+  input[type="email"],
+  input[type="password"] {
+    background-color: #1e1e1e;
+    color: #f1f1f1;
+    border: 1px solid #444;
+  }
+
+  textarea::placeholder,
+  input::placeholder {
+    color: #bbb;
+  }
+
+  textarea:focus,
+  input:focus {
+    background-color: #252525;
+    color: #fff;
+    border-color: #198754;
+    box-shadow: 0 0 0 0.2rem rgba(25, 135, 84, 0.25);
+  }
+}
+
+/* Light mode default (optional override for consistency) */
+body {
+  textarea,
+  input[type="text"],
+  input[type="email"],
+  input[type="password"] {
+    background-color: #fff;
+    color: #212529;
+    border: 1px solid #ced4da;
+  }
+
+  textarea::placeholder,
+  input::placeholder {
+    color: #6c757d;
+  }
+
+  textarea:focus,
+  input:focus {
+    border-color: #198754;
+    box-shadow: 0 0 0 0.2rem rgba(25, 135, 84, 0.25);
+  }
+}
+

@@ -1,1 +1,95 @@
-<p>blog-generator works!</p>
+<!-- blog-generator.component.html -->
+<div class="container py-4">
+  <h2 class="text-success fw-bold mb-4">Generate Your Blog Post</h2>
+
+  <form (ngSubmit)="generateBlog()" #blogForm="ngForm" class="mb-4">
+
+      <div class="mb-3">
+    <label for="title" class="form-label">Enter Blog Title</label>
+    <input
+      type="text"
+      id="title"
+      class="form-control"
+      [(ngModel)]="title"
+      name="title"
+      required
+      placeholder="e.g. How AI is Changing Content Creation">
+  </div>
+  
+    <div class="mb-3">
+      <label for="prompt" class="form-label">Enter your blog prompt</label>
+      <textarea
+        id="prompt"
+        class="form-control"
+        [(ngModel)]="prompt"
+        name="prompt"
+        rows="4"
+        required
+        placeholder="Write your prompt here..."></textarea>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Tone</label>
+      <div>
+        <button
+          type="button"
+          class="btn me-2"
+          [class.btn-success]="tone === 'friendly'"
+          [class.btn-outline-success]="tone !== 'friendly'"
+          (click)="setTone('friendly')">Friendly</button>
+
+        <button
+          type="button"
+          class="btn me-2"
+          [class.btn-success]="tone === 'professional'"
+          [class.btn-outline-success]="tone !== 'professional'"
+          (click)="setTone('professional')">Professional</button>
+
+        <button
+          type="button"
+          class="btn me-2"
+          [class.btn-success]="tone === 'casual'"
+          [class.btn-outline-success]="tone !== 'casual'"
+          (click)="setTone('casual')">Casual</button>
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Length</label>
+      <div>
+        <button
+          type="button"
+          class="btn me-2"
+          [class.btn-success]="length === 'short'"
+          [class.btn-outline-success]="length !== 'short'"
+          (click)="setLength('short')">Short</button>
+
+        <button
+          type="button"
+          class="btn me-2"
+          [class.btn-success]="length === 'medium'"
+          [class.btn-outline-success]="length !== 'medium'"
+          (click)="setLength('medium')">Medium</button>
+
+        <button
+          type="button"
+          class="btn me-2"
+          [class.btn-success]="length === 'long'"
+          [class.btn-outline-success]="length !== 'long'"
+          (click)="setLength('long')">Long</button>
+      </div>
+    </div>
+
+    <button
+      type="submit"
+      class="btn btn-success"
+      [disabled]="!blogForm.form.valid || isLoading">
+      {{ isLoading ? 'Generating...' : 'Generate Blog' }}
+    </button>
+  </form>
+
+  <div *ngIf="generatedBlog" class="card shadow-sm p-3">
+    <h4 class="text-success">Generated Blog:</h4>
+    <p>{{ generatedBlog }}</p>
+  </div>
+</div>
