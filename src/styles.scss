@@ -1,1 +1,38 @@
 /* You can add global styles to this file, and also import other style files */
+body.dark-mode {
+  background-color: #121212;
+  color: #f1f1f1;
+
+  .navbar,
+  .card,
+  .list-group-item,
+  .bg-body {
+    background-color: #1e1e1e !important;
+    color: #f1f1f1 !important;
+  }
+
+  .text-muted {
+    color: #ccc !important;
+  }
+
+  .btn-light {
+    background-color: #f8f9fa; /* slightly off-white for dark mode */
+    color: #121212;
+    border: 1px solid #ddd;
+  }
+
+  #footer {
+    background-color: #1a1a1a;
+    border-top: 1px solid #333 !important;
+    color: #f1f1f1 !important; /* changed to light so it’s readable */
+  }
+  
+  #right-side-container {
+    background-color: #1a1a1a !important;
+  }
+}
+
+/* Smooth transition for bg and text colors on all elements */
+* {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}

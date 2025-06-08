@@ -1,0 +1,93 @@
+<section class="landing container py-5">
+  <nav class="navbar navbar-expand-lg navbar-light bg-body shadow-sm mb-4 rounded">
+    <div class="container-fluid">
+      <a class="navbar-brand fw-bold fs-3 text-success" href="#">AI Blog Assistant</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav align-items-center">
+          <li class="nav-item">
+            <a class="nav-link fw-semibold text-success" href="#features">Features</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link fw-semibold text-success" href="#how-it-works">How It Works</a>
+          </li>
+          <li class="nav-item ms-3">
+            <button (click)="toggleTheme()" class="btn btn-outline-secondary btn-sm me-2">
+              {{ themeService.isDarkMode() ? '🌙' : '☀️' }}
+            </button>
+          </li>
+          <li class="nav-item">
+            <a routerLink="/login" class="btn btn-success btn-sm px-4 fw-bold">Get Started</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="row align-items-center mb-5">
+    <div class="col-lg-6 text-center text-lg-start mb-4 mb-lg-0">
+      <h1 class="display-5 fw-bold text-success">Write Smarter, Faster, Better</h1>
+      <p class="lead text-muted">Let AI create high-quality blog content while you focus on your ideas.</p>
+      <a routerLink="/login" class="btn btn-success btn-lg px-5 fw-bold">Try It Now</a>
+    </div>
+    <div class="col-lg-6 text-center">
+      <img src="assets/ai_writing.png" alt="AI Writing" class="img-fluid rounded shadow-sm" style="max-height: 350px;">
+    </div>
+  </div>
+
+  <section id="features" class="mb-5">
+    <h2 class="text-success fw-bold mb-4 text-center">Features</h2>
+    <div class="row text-center g-4">
+      <div class="col-md-4">
+        <div class="card shadow-sm h-100">
+          <div class="card-body">
+            <h5 class="card-title fw-semibold text-success">AI Blog Generator</h5>
+            <p class="card-text text-muted">Smart AI writes for your target audience and voice.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card shadow-sm h-100">
+          <div class="card-body">
+            <h5 class="card-title fw-semibold text-success">Simple Editor</h5>
+            <p class="card-text text-muted">Edit and enhance your content with ease.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card shadow-sm h-100">
+          <div class="card-body">
+            <h5 class="card-title fw-semibold text-success">Time Saver</h5>
+            <p class="card-text text-muted">Generate posts in seconds—leave writer's block behind.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="how-it-works" class="mb-5">
+    <h2 class="text-success fw-bold mb-4 text-center">How It Works</h2>
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <ol class="list-group list-group-numbered">
+          <li class="list-group-item">Enter a topic or keywords.</li>
+          <li class="list-group-item">Select a tone and length.</li>
+          <li class="list-group-item">AI generates your blog. You refine it.</li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <section id="get-started" class="text-center py-5 bg-success rounded text-white mb-5">
+    <h2 class="mb-4 fw-bold">Ready to revolutionize your writing?</h2>
+    <a routerLink="/login" class="btn btn-light btn-lg px-5 fw-bold">Start Writing Now</a>
+  </section>
+
+  <footer id="footer" class="text-center text-muted py-3 border-top">
+    <small>© 2025 AI Blog Assistant. All rights reserved.</small>
+  </footer>
+</section>

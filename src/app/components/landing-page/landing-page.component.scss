@@ -1,0 +1,16 @@
+.landing {
+  a.nav-link:hover {
+    color: #19692c !important; // darker green on hover
+  }
+  
+  .btn-success {
+    transition: background-color 0.3s ease;
+    &:hover {
+      background-color: #19692c !important;
+    }
+  }
+  
+  footer {
+    background-color: #f8f9fa;
+  }
+}
