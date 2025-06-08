@@ -1,28 +1,41 @@
-<div class="container py-4">
-  <h2 class="text-success fw-bold mb-4">Your Blog Posts</h2>
+<div class="page-container d-flex flex-column min-vh-100">
+  <div class="container py-4 flex-grow-1">
+    <h2 class="text-success fw-bold mb-4">Your Blog Posts</h2>
 
-  <div *ngIf="blogs && blogs.length > 0; else noBlogs">
-    <div class="row row-cols-1 row-cols-md-2 g-4">
-      <div class="col" *ngFor="let blog of blogs">
-        <div class="card shadow-sm h-100">
-          <div class="card-body">
-            <h5 class="card-title text-success">{{ blog.title }}</h5>
-            <p class="card-text text-secondary">{{ blog.summary }}</p>
-            <a [routerLink]="['/blog', blog.id]" class="btn btn-outline-success btn-sm">Read More</a>
+    <div *ngIf="blogs && blogs.length > 0; else noBlogs">
+      <div class="row row-cols-1 row-cols-md-2 g-4">
+        <div class="col" *ngFor="let blog of blogs">
+          <div class="card shadow-sm h-100">
+            <div class="card-body">
+              <h5 class="card-title text-success">{{ blog.title }}</h5>
+              <p class="card-text text-secondary">{{ blog.summary }}</p>
+              <a [routerLink]="['/blog', blog.id]" class="btn btn-outline-success btn-sm">Read More</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Create Blog Card -->
+        <div class="col">
+          <div 
+            class="card shadow-sm h-100 d-flex align-items-center justify-content-center bg-success text-white" 
+            style="cursor: pointer;" 
+            [routerLink]="['/create']"
+          >
+            <div class="display-4 fw-bold">+</div>
+            <div>Create new blog</div>
           </div>
         </div>
       </div>
-        <!-- Create Blog Card -->
-  <div class="col">
-    <div class="card shadow-sm h-100 d-flex align-items-center justify-content-center bg-success text-white" style="cursor: pointer;" [routerLink]="['/create']">
-      <div class="display-4 fw-bold">+</div>
-      <div class="display-8">Create new blog</div>
     </div>
-  </div>
-    </div>  
-</div>
 
-  <ng-template #noBlogs>
-    <p class="text-muted text-center mt-5">No blog posts found.</p>
-  </ng-template>
+    <ng-template #noBlogs>
+      <p class="text-muted text-center mt-5">No blog posts found.</p>
+    </ng-template>
+  </div>
+
+  <footer id="footer" class="py-3 bg-success text-white text-center mt-auto">
+    <div class="container">
+      <small>&copy; 2025 AI Blog Assistant. All rights reserved.</small>
+    </div>
+  </footer>
 </div>

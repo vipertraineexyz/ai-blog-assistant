@@ -1,0 +1,31 @@
+<nav class="navbar navbar-expand-lg main-navbar shadow-sm">
+  <div class="container-fluid px-4">
+    <a class="navbar-brand fw-bold" routerLink="/">AI Blog</a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav align-items-center gap-2">
+        <li class="nav-item">
+          <a class="nav-link nav-btn" routerLink="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link nav-btn" routerLink="/blogs">Blogs</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link nav-btn" routerLink="/create">Create</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link nav-btn" routerLink="/login">Login</a>
+        </li>
+        <li class="nav-item">
+          <button class="btn toggle-btn" (click)="toggleTheme()" title="Toggle Theme">
+            {{ isDarkMode ? '🌙' : '☀️' }}
+          </button>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

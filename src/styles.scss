@@ -1,4 +1,22 @@
 /* You can add global styles to this file, and also import other style files */
+
+/* Shared styles for both themes */
+.page-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Full viewport height */
+}
+
+.page-container > .container {
+  flex-grow: 1; /* Take all available space */
+}
+
+/* Smooth transition for all elements */
+* {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Dark Mode */
 body.dark-mode {
   background-color: #121212;
   color: #f1f1f1;
@@ -16,23 +34,33 @@ body.dark-mode {
   }
 
   .btn-light {
-    background-color: #f8f9fa; /* slightly off-white for dark mode */
+    background-color: #f8f9fa;
     color: #121212;
     border: 1px solid #ddd;
+  }
+
+  .btn-theme-toggle {
+    background-color: #333 !important;
+    color: #f1f1f1 !important;
+    border: 1px solid #555 !important;
   }
 
   #footer {
     background-color: #1a1a1a;
     border-top: 1px solid #333 !important;
-    color: #f1f1f1 !important; /* changed to light so it’s readable */
+    color: #f1f1f1 !important;
   }
-  
+
   #right-side-container {
     background-color: #1a1a1a !important;
   }
 }
 
-/* Smooth transition for bg and text colors on all elements */
-* {
-  transition: background-color 0.3s ease, color 0.3s ease;
+/* Light Mode */
+body:not(.dark-mode) {
+  .btn-theme-toggle {
+    background-color: #f1f1f1 !important;
+    color: #121212 !important;
+    border: 1px solid #ccc !important;
+  }
 }
